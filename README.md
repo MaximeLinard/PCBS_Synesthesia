@@ -11,3 +11,12 @@ I would like to try to program an experiment measuring the response time (time i
 
 If I can do it quickly enough I could try to program the apparition of the different panels in a random way or even to make the position of the numbers of each panel random.
 
+Planning :
+
+01/04 : V : Project creation
+06/04 : V : Fixation Cross
+08/04 : V : Stimulus apparition after a certain time + Press space bar to go on the next trial + RT measurement (list + mean + std)
+15/04 : X : Random pannels creation
+22/04 : X : Add an introduction pannel with instructions (+ add the posibility to enter the name of the participant in order to save data ?)
+29/04 : X : Set the definitive parameter of the experiement and make code adjustement for efficiency and intelligibility
+
