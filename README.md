@@ -9,6 +9,8 @@ However, for a person that have numerical synesthesia, the "2" can stand out muc
 
 I would like to try to program an experiment measuring the response time (time it takes a subject to see the "2" of all the "5") for various panels.
 
+![image](https://user-images.githubusercontent.com/81753348/114065035-85ac9e00-989a-11eb-992c-fddda87ea725.png)
+
 If I can do it quickly enough I could try to program the apparition of the different panels in a random way or even to make the position of the numbers of each panel random.
 
 Planning :
