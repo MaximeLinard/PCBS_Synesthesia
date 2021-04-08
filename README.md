@@ -17,11 +17,10 @@ Planning :
 
 06/04 : V : Fixation Cross
 
-08/04 : V : Stimulus apparition after a certain time + Press space bar to go on the next trial + RT measurement (list + mean + std)
+08/04 : V : Stimulus apparition after a certain time + Press space bar to go on the next trial + RT measurement (list + mean + std) + Instruction pannel
 
-15/04 : X : Random pannels creation
+15/04 : X : Random pannels creation + Data saving (+ add the posibility to enter the name of each participant at the beggining ?)
 
-22/04 : X : Add an introduction pannel with instructions (+ add the posibility to enter the name of the participant in order to save data ?)
+22/04 : X : Set the definitive parameters of the experiement and make code adjustements for efficiency and intelligibility
 
-29/04 : X : Set the definitive parameter of the experiement and make code adjustement for efficiency and intelligibility
 
