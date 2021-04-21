@@ -1,6 +1,5 @@
 import pygame
 import numpy as np
-import os
 pygame.init()
 
 
@@ -23,6 +22,7 @@ BLUE = (0, 0, 255)
 
 screen = pygame.display.set_mode((W, H))
 
+
 pygame.display.set_caption('Numeric Synesthesia')
 
 '''______________Instructions Pannel______________'''
@@ -40,13 +40,13 @@ def display_instruction(screen):
     line2 = myfont.render("2. When the fixation cross appears keep your eyes on it." , 1, pygame.Color('black'))
     screen.blit(line2, (screen_center_x - 495, screen_center_y - 150))
     
-    line3 = myfont.render("3. A pannel with numbers will appears, press SPACEBAR as soon as you see a 2. " , 1, pygame.Color('black'))
+    line3 = myfont.render("3. A pannel with numbers will appears, press SPACEBAR as soon as you see a 5. " , 1, pygame.Color('black'))
     screen.blit(line3, (screen_center_x - 495, screen_center_y - 100))
     
-    line4 = myfont.render("4. Repeat for all the trials." , 1, pygame.Color('black'))
+    line4 = myfont.render("4. Sometimes there are pannels without 5 ! (so don't touch anything) " , 1, pygame.Color('black'))
     screen.blit(line4, (screen_center_x - 495, screen_center_y - 50))
     
-    line5 = myfont.render("5. Press SPACEBAR to beggin." , 1, pygame.Color('black'))
+    line5 = myfont.render("5. Press SPACEBAR to begin." , 1, pygame.Color('black'))
     screen.blit(line5, (screen_center_x - 495, screen_center_y - 0))
   
     pygame.display.flip()
@@ -59,15 +59,38 @@ def draw_fixation_cross(x = screen_center_x, y = screen_center_y, length=20, wid
     screen.fill(WHITE)
     pygame.draw.line(screen, color, (x, y - length), (x, y + length), width)
     pygame.draw.line(screen, color, (x - length, y), (x + length, y), width)
+   
 
-
-def pannel(center_x = screen_center_x, center_y = screen_center_y, width = 200, height = 200):
-    
+def display_stim(screen, current_trial):
     screen.fill(WHITE)
-    left_x = center_x - width // 2  # x coordinates of topleft corner
-    top_y = center_y - height // 2  # y coordinate of topleft corner
-    pygame.draw.rect(screen, BLUE, (left_x, top_y, width, height))
-     
+    myfont = pygame.font.SysFont(pygame.font.get_fonts()[0], 32)
+    
+    for i in range(50):
+    
+        two_rand = myfont.render("2" , 1, pygame.Color('black'))
+        screen.blit(two_rand, (screen_center_x + np.random.randint(-400, 400), screen_center_y + np.random.randint(-300, 300)))
+
+        
+    if list_five_apparition[current_trial] == True:     
+        five_rand = myfont.render("5" , 1, pygame.Color('black'))
+        screen.blit(five_rand, (screen_center_x + np.random.randint(-400, 400), screen_center_y + np.random.randint(-300, 300)))    
+      
+    pygame.display.flip()
+    
+    
+def five_apparition(nb_of_trial, nb_of_five):
+    
+    list_True_or_False = [True for i in range(nb_of_five)]
+    list_True_or_False.extend([False for i in range(nb_of_trials - nb_of_five)])
+    
+    np.random.shuffle(list_True_or_False)
+    
+    return(list_True_or_False)
+         
+        
+
+    
+    
     
 '''______________Reaction Time Measure______________'''
     
@@ -79,6 +102,8 @@ def measure_response_time(max_response_delay=5000):
     reaction_time = 0
     pygame.event.clear() 
     t0 = pygame.time.get_ticks()
+    
+   
 
     while not button_pressed and not escape and not response_delay_elapsed:
         for ev in pygame.event.get():
@@ -103,9 +128,13 @@ def measure_response_time(max_response_delay=5000):
 '''______________Running Loop______________'''
 
 
-nb_of_trials = 3
+nb_of_trials = 4
+nb_of_five = 2
 
-current_trials = 0
+
+list_five_apparition = five_apparition(nb_of_trials, nb_of_five)
+
+current_trial = -1
 list_of_reaction_times = []
 space_bar_pressed = False
 running = True
@@ -117,7 +146,7 @@ while running:
         
     if space_bar_pressed:
         
-        current_trials += 1
+        current_trial += 1
         
         screen.fill(WHITE)
         pygame.display.flip()
@@ -126,10 +155,10 @@ while running:
         # Fixation Cross
         draw_fixation_cross()
         pygame.display.flip()
-        pygame.time.wait(np.random.randint(1000, 4000))
+        pygame.time.wait(np.random.randint(700, 3000))
         
         # Stimulus Display
-        pannel()
+        display_stim(screen, current_trial)
         pygame.display.flip()
        
         list_of_reaction_times += [measure_response_time()]
@@ -149,13 +178,12 @@ while running:
            space_bar_pressed = True 
            
     # End of the session     
-    if current_trials >= nb_of_trials:
+    if current_trial >= nb_of_trials - 1:
         running = False
-        print(list_of_reaction_times)
+       
+print(list_of_reaction_times)
     
 print("Mean Response Time = " + str(np.mean(list_of_reaction_times)))
 print("Standard Deviation = " + str(np.std(list_of_reaction_times)))
-
-
 
 pygame.quit()
