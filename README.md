@@ -42,9 +42,9 @@ Here you can find the results for 7 Cogmaster students:
 
 ![image](https://user-images.githubusercontent.com/81753348/117946836-f0c11880-b30f-11eb-9528-347bbef99369.png)
 
-![image](https://user-images.githubusercontent.com/81753348/117943435-6925da80-b30c-11eb-83ae-d70dcda7af7e.png)
+![image](https://user-images.githubusercontent.com/81753348/117947154-37167780-b310-11eb-859c-b23c589ccb3f.png)
 
 We can see that the mean is around 1.8s.
-What is intresting is the fact that NB has a RT 1278ms, that's really lower than others and even than me (ML 1491ms) knowing that I'm really trained for the task.
+What is intresting is the fact that NB has a RT 1278ms, that's really lower than others and even than me (1491ms) knowing that I'm really trained for the task.
 
 I don't have enought data to perform statistics but one may think that BS has numeric synesthesia !
