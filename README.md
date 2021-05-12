@@ -38,7 +38,7 @@ Precision on the code :
 Some results:
 
 I have set the parameters to 20 trials during which 16/20 of the presented pannels had a "5".
-Here you can find the results for 7 Cogmaster students: 
+Here you can find the results for 6 Cogmaster's students: 
 
 ![image](https://user-images.githubusercontent.com/81753348/117946836-f0c11880-b30f-11eb-9528-347bbef99369.png)
 
