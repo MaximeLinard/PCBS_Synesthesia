@@ -40,7 +40,7 @@ Some results:
 I have set the parameters to 20 trials during which 16/20 of the presented pannels had a "5".
 Here you can find the results for 7 Cogmaster students: 
 
-![image](https://user-images.githubusercontent.com/81753348/117946464-9e7ff780-b30f-11eb-856c-82def92d4222.png)
+![image](https://user-images.githubusercontent.com/81753348/117946836-f0c11880-b30f-11eb-9528-347bbef99369.png)
 
 ![image](https://user-images.githubusercontent.com/81753348/117943435-6925da80-b30c-11eb-83ae-d70dcda7af7e.png)
 
