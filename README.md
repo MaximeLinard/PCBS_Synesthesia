@@ -1,6 +1,7 @@
 # PCBS_Synesthesia
 
-The purpose of this experiment is to test numerical synesthesia (which is a subphenomenon of synesthesia (https://fr.wikipedia.org/wiki/Synesth%C3%A9sie)).
+The purpose of this experiment is to test numerical synesthesia (which is a subphenomenon of synesthesia (https://fr.wikipedia.org/wiki/Synesth%C3%A9sie - Simner J, Mulvenna C, Sagiv N, Tsakanikos E, Witherby SA, Fraser C, Scott K, Ward J. Synaesthesia: the prevalence of atypical cross-modal experiences. Perception. 2006;35(8):1024-33. doi: 10.1068/p5469. PMID: 17076063.
+)).
 
 When a non-synesthetic person looks at a grid filled with "5" among which there is a "2", it is difficult for him to identify it quickly.
 However, for a person that have numerical synesthesia, the "2" can stand out much more clearly.
@@ -34,3 +35,14 @@ Precision on the code :
 - When there is no five, the participant should not press the button. If the button is pressed, the RT is not recorded.  So if we have x trials with a five presented we will have a list of x RT. 
 - The mean and standard deviation of each session is then printed, if I have time, I will code for an automatic saving of the data.
 
+Some results:
+
+I have set the parameters to 20 trials during which 16/20 of the presented pannels had a "5".
+Here you can find the results for 7 Cogmaster students: 
+
+![image](https://user-images.githubusercontent.com/81753348/117943435-6925da80-b30c-11eb-83ae-d70dcda7af7e.png)
+
+We can see that the mean is around 1.8s.
+What is intresting is the fact that NB has a RT 1278ms, that's really lower than others and even than me (ML 1491ms) knowing that I'm really trained for the task.
+
+I don't have enought data to perform statistics but one may think that BS has numeric synesthesia !
