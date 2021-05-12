@@ -1,3 +1,8 @@
+Created on Thu Apr  8 14:03:30 2021
+
+@author: maxim
+"""
+
 import pygame
 import numpy as np
 pygame.init()
@@ -6,6 +11,7 @@ pygame.init()
 
 nb_of_trials = 10
 nb_of_pannels_with_five = 8
+nb_of_distractors = 50
 
 max_response_time = 4000
 
@@ -65,7 +71,7 @@ def display_stimulus(screen, current_trial):
     screen.fill(WHITE)
     myfont = pygame.font.SysFont(pygame.font.get_fonts()[0], 32)
     
-    for i in range(50):
+    for i in range(nb_of_distractors):
         two_rand = myfont.render("2" , 1, pygame.Color('black'))
         screen.blit(two_rand, (screen_center_x + np.random.randint(-400, 400), screen_center_y + np.random.randint(-300, 300)))
 
@@ -85,7 +91,7 @@ def five_apparition(nb_of_trial, nb_of_five):
 
 '''______________Data Collection______________'''
 
-def measure_response_time_if_five_present(max_response_delay=max_response_time):
+def measure_response_time(max_response_delay=max_response_time):
     
     button_pressed = False
     escape = False
@@ -120,7 +126,7 @@ def measure_response_time_if_five_present(max_response_delay=max_response_time):
         return max_response_delay
 
     
-def if_no_five(max_response_delay=max_response_time):
+def no_measure(max_response_delay=max_response_time):
     
     button_pressed = False
     escape = False
@@ -171,10 +177,10 @@ while running:
         pygame.display.flip()
         
         if list_five_apparition[current_trial] == True:
-            list_of_reaction_times += [measure_response_time_if_five_present()]
+            list_of_reaction_times += [measure_response_time()]
             
         else:
-           if_no_five()
+           no_measure()
                 
         space_bar_pressed = False 
         
